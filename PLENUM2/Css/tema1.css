@@ -6,7 +6,13 @@
   margin: 0;
 }
 
-
+.contents{
+    color: rgb(90, 114, 160);
+    font-size: 120%;
+    font-family: "Oswald", sans-serif;
+    margin : 2vh 0;
+    padding: 3vh;
+}
 
 html, body {
     margin: 0;
@@ -64,6 +70,9 @@ a {
     color: rgb(28, 44, 68);
   }
   
+iframe{
+  width: 55vw;
+}
 
 @media screen and (max-width: 768px) {
     header {
