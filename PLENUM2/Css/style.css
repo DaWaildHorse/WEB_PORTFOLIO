@@ -17,15 +17,12 @@
   }
 }
 
-
 html, body {
   margin: 0;
   padding: 0;
-  display: grid;
-  width: 100%;
-  grid-template-rows: auto 1fr; 
   height: 100%;
-  
+  display: grid;
+  grid-template-rows: auto 1fr;
 }
 
 header {
@@ -35,7 +32,7 @@ header {
   grid-template-columns: 25% 50% 25%;
   width: 100%;
   background-color: rgb(90, 114, 160);
-  overflow: hidden;
+  overflow: hidden; /* Hide any overflow content */
   padding: 3vh 0;
   animation: Fade-animation 2s ease-out;
 }
@@ -49,13 +46,14 @@ header {
   word-wrap: break-word;
   overflow-wrap: break-word;
   width: 100%;
-  font-size: 400%; 
+  font-size: 400%; /* Adjust font size as needed */
 }
 
 main {
   padding: 3vh;
-  overflow: auto;
   animation: Fade-animation 2.5s ease-out;
+  overflow: auto; /* Ensure main can scroll if content overflows */
+  height: 100%;
 }
 
 img {
@@ -67,14 +65,60 @@ img {
 
 .contents-title {
   color: rgb(90, 114, 160);
-  font-size: 350%;
+  font-size: 250%; /* Adjust font size as needed */
   font-family: "Oswald", sans-serif;
-  margin : 2vh 0;
+  margin: 2vh 0;
 }
 
 a {
   text-decoration: none;
   color: rgb(28, 44, 68);
+}
+
+article {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Responsive grid columns */
+  gap: 3%; 
+  width: 100%; 
+  align-items: start; /* Align items at the start */
+  height: 1fr;
+}
+
+.subject-card {
+  display: grid;
+  place-items: center; /* Center content vertically and horizontally */
+  text-align: center;
+  padding: 2vh;
+  font-size: 100%; /* Adjust font size as needed */
+  grid-template-rows: 70% 30%;
+  transition: box-shadow 0.3s ease; /* Smooth transition for the shadow */
+  border-radius: 5vh;
+  background-color: rgb(253, 255, 226);
+  position: relative; /* Ensure positioning context for absolute overlay */
+  height: 35vh;
+}
+
+.subject-card:hover {
+  box-shadow: 0 0 3vh rgba(90, 114, 160 , 0.3); /* Add shadow on hover */
+}
+
+.subject-card .background-img {
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 3vh;
+}
+
+article a:nth-child(1) .background-img {
+  background-image: url("/theme1.jpg");
+}
+
+article a:nth-child(2) .background-img {
+  background-image: url("/theme2.jpg");
+}
+
+article a:nth-child(3) .background-img {
+  background-image: url("/modelo-base-de-datos-00.jpg");
 }
 
 
@@ -86,11 +130,15 @@ a {
     font-size: 150%;
   }
 
+  .title {
+    font-size: 8vw; 
+  }
+
   img {
     height: 25vh;
   }
 
-  .title {
-    font-size: 8vw; 
+  article {
+    grid-template-columns: 1fr;
   }
 }

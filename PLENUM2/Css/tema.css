@@ -65,13 +65,26 @@ img {
     margin : 2vh 0;
   }
   
-a {
+  .button {
     text-decoration: none;
     color: rgb(28, 44, 68);
+    position: relative;
+    border: solid rgb(26, 33, 48) 0.5vw;
+    padding: 1vh;
+    background-color: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
   }
   
+  .button:hover {
+    background-color: rgb(26, 33, 48); /* Darker background for hover */
+    color: rgb(253, 255, 226); /* Light text color for contrast */
+  }
+  
+
+
 iframe{
-  width: 55vw;
+  width: 40vw;
+  border: 1vh solid rgb(28, 44, 68) ;
 }
 
 @media screen and (max-width: 768px) {
