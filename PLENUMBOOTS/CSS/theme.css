@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@700&display=swap');
+
+:root {
+  background-color: rgb(253, 255, 226);
+  margin: 0;
+  height: 100vh;
+}
+
+
+@keyframes Fade-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+header{
+  background-color: rgb(90, 114, 160);
+  animation: Fade-animation 2s ease-out;
+}
+
+.main-index{
+  background-color: rgb(253, 255, 226);
+  animation: Fade-animation 2.5s ease-out;
+}
+
+
+.contents{
+    color: rgb(90, 114, 160);
+    font-size: 120%;
+    font-family: "Oswald", sans-serif;
+    margin : 2vh 0;
+    padding: 3vh;
+}
+
+
+a {
+  color:  rgb(28, 44, 68);
+}
+
+.header-text {
+  flex: 1;
+  text-align: center;
+  font-size: 400%;
+  margin: 0;
+  color:  rgb(28, 44, 68);
+  font-family: "Oswald", sans-serif;
+  margin: 2vh 0;
+}
+.contents-title{
+  color: rgb(90, 114, 160);
+  font-size: 250%; /* Adjust font size as needed */
+  font-family: "Oswald", sans-serif;
+}
+
+
+.header-img {
+  max-width: 100%;
+  height: 20vh;
+  object-fit: contain;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .header-text h1 {
+    font-size: 200%;
+  }
+
+  .header-img{
+    height: 40vh;
+  }
+}
+
+
+
+
