@@ -6,6 +6,9 @@
   margin: 0;
 }
 
+
+
+
 @keyframes Fade-animation {
   0% {
     opacity: 0;
@@ -78,8 +81,8 @@ a {
 article {
   display: grid;
   grid-template-columns: 1fr 1fr; /* Responsive grid columns */
-  gap: 3%; 
-  width: 100%; 
+  gap: 3%;
+  width: 100%;
   align-items: start; /* Align items at the start */
   height: 1fr;
 }
@@ -131,7 +134,7 @@ article a:nth-child(3) .background-img {
   }
 
   .title {
-    font-size: 8vw; 
+    font-size: 8vw;
   }
 
   img {

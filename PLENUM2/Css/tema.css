@@ -19,10 +19,10 @@ html, body {
     padding: 0;
     display: grid;
     width: 100%;
-    grid-template-rows: auto 1fr; 
+    grid-template-rows: auto 1fr;
     height: 100%;
   }
-  
+
 header {
     display: grid;
     align-items: center;
@@ -43,28 +43,28 @@ header {
     word-wrap: break-word;
     overflow-wrap: break-word;
     width: 100%;
-    font-size: 400%; 
+    font-size: 400%;
   }
-  
+
 main {
     padding: 3vh;
     overflow: auto;
   }
-  
+
 img {
     width: auto;
     height: 15vh;
     max-width: 100%;
     object-fit: contain;
   }
-  
+
 .contents-title {
     color: rgb(90, 114, 160);
     font-size: 350%;
     font-family: "Oswald", sans-serif;
     margin : 2vh 0;
   }
-  
+
   .button {
     text-decoration: none;
     color: rgb(28, 44, 68);
@@ -74,12 +74,12 @@ img {
     background-color: transparent;
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
   }
-  
+
   .button:hover {
     background-color: rgb(26, 33, 48); /* Darker background for hover */
     color: rgb(253, 255, 226); /* Light text color for contrast */
   }
-  
+
 
 
 iframe{
@@ -92,12 +92,12 @@ iframe{
       grid-template-columns: 1fr;
       font-size: 150%;
     }
-  
+
     img {
       height: 25vh;
     }
-  
+
     .title {
-      font-size: 8vw; 
+      font-size: 8vw;
     }
   }
