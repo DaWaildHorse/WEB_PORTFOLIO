@@ -3,30 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/index.css">
     <title>PLENUM1</title>
   </head>
-  <body>
-    <img src="/PLENUM.png" alt="plenumsoft">
-    <img src="/CELULAS.png" width="400" alt=" celulas plenum">
-    <h1>CELULAS PLENUM</h1>
-    <h2>
-      Bloques Temáticos
-    </h2>
-    <ul>
-      <li>
-        <a href="tema1.html"><h2>Tema 1 : Temas Selectos ISW </h2>
+  <body class="bg-bg-white">
+
+    <header class="grid bg-index-blue place-items-center grid-cols-1 md:grid-cols-3 gap-4 items-center p-4 shadow-md">
+        <a href="tema1.html">
+          <img src="/PLENUM.png" alt="plenumsoft" class="w-full max-w-xs">
         </a>
-      </li>
-      <li>
-        <a href="tema2.html"><h2>Tema 2 : Fundamento de Programación</h2> 
-        </a>
-      </li>
-      <li>
-        <a href="tema3.html"><h2>Tema 3 : Fundamentos de Programación Web </h2>
-        </a>
-      </li>
-    </ul>
+          <h1 class=" font-oswald text-title-blue text-center text-5xl md:text-5xl font-bold break-words">
+          CELULAS PLENUM
+        </h1>
+        <img src="/CELULAS.png" alt="celulas plenum" class="w-full max-w-xs">
+
+    </header>
+
+    <main class="p-8 text-index-blue font-oswald">
+      <h2 class="  contents-title text-6xl">
+        Bloques Temáticos
+      </h2>
+
+      <article class=" mt-5 grid place-items-center grid-cols-1 md:grid-cols-3 gap-4 items-center p-4 ">
+        
+        <div class="max-w-sm border rounded-lg shadow bg-index-blue dark:border-gray-700 h-full ">
+          <a href="#">
+              <img class="rounded-t-lg w-full row-span-2" src="/images.jpeg" alt="" />
+          </a>
+          <div></div>
+          <div class="p-5 max-h-4">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Tema 1 : Temas Selectos de Ingenieria de Software</h5>
+          </div>
+        </div>
+        
+        
+
+        <div class="max-w-sm border rounded-lg shadow bg-index-blue dark:border-gray-700 h-full">
+          <a href="#">
+              <img class="rounded-t-lg w-full row-span-2" src="/modelo-base-de-datos-00.jpg" alt="" />
+          </a>
+          <div></div>
+          <div class="p-5">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Tema 2 : Fundamentos de Programación</h5>
+          </div>
+        </div>
+        
+        <div class="max-w-sm border rounded-lg shadow bg-index-blue dark:border-gray-700 h-full">
+          <a href="#">
+              <img class="rounded-t-lg w-full" src="/theme1.jpg" alt="" />
+          </a>
+          <div class="p-5">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Tema 3 : Fundamentos de Programación Web </h5>
+          </div>
+        </div>
+        
 
 
+
+
+      </article>
+      
+    </main>
   </body>
 </html>
