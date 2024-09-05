@@ -40,16 +40,18 @@ function Ej7(str = ""){
   (inverted_str === str)? console.log("Es palindromo") : console.log("No es palindromo")
 }
 
-let str = 'hannaH'
 
+function Ej8(str = "" , pattern = ""){
+  console.info(str.replace(new RegExp(pattern, "ig"), ""))
+} 
+
+
+
+let str = 'xyz1, xyz2, xyz3, xyz4, xyz5, xyz6'
 Ej1(str)
-
 Ej2(str, 11)
-
 Ej3(str , "e")
-
 Ej5(str)
-
 Ej6(str , "Hello")
-
 Ej7(str)
+Ej8(str , '[xyz]')
