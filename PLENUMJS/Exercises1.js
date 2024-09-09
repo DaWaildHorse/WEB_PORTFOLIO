@@ -186,45 +186,119 @@ function Ej26(arr = undefined){
     console.log("El promedio es " + median)
 }
 
-class Pelicula{
-  constructor({id,title,director,premier,country,genre,note}){
-    this.id = id
-    this.title = title
-    this.director = director
-    this.premier = premier
-    this.country = country
-    this.genre = genre
-    this.note = note
-  
-    this.validateIMDB(id)
-    this.validatedirector(title)
+class Pelicula {
+  static acceptedGenres = [
+    "Action", "Adult", "Adventure", "Animation", "Biography", "Comedy", "Crime", 
+    "Documentary", "Drama", "Family", "Fantasy", "Film Noir", "Game-Show", "History", 
+    "Horror", "Musical", "Music", "Mystery", "News", "Reality-TV", "Romance", 
+    "Sci-Fi", "Short", "Sport", "Talk-Show", "Thriller", "War", "Western"
+  ];
+  constructor({ id, title, director, year, country, genre, rating }) {
+    this.id = id;
+    this.title = title;
+    this.director = director;
+    this.year = year;
+    this.country = country;
+    this.genre = genre;
+    this.rating = rating;
+
+    // Validate properties
+    this.validateIMDB(id);
+    this.validatetitle(title);
+    this.validatedirector(director);
+    this.validateYear(year);
+    this.validateCountry(country);
+    this.validateGenre(genre);
+    this.validateRating(rating);
   }
 
-  validatelength(prop , value , long){
-    if(value.length > long) return console.error("excedido numero caracteres")
-    return true
+  validateString(prop, value, maxLength) {
+    if (!value) {
+      console.warn(`${prop} está vacío`);
+      return false;
+    }
+
+    if (typeof value !== "string") {
+      console.warn(`${prop} no es un string`);
+      return false;
+    }
+
+    if (value.length > maxLength) {
+      console.warn(`${prop} excede el máximo de caracteres (${maxLength})`);
+      return false;
+    }
+
+    return true;
   }
 
-  validatString(prop , value){
-    if(!value) return console.warn("el valor esta vacio")
-
-    if(typeof valor !== "string") return console.warn("El valor ingresado no es un string")
-
-    return true
-  }
-
-  validateIMDB(id){
-    if(!(/^[a-z]{2}([0-9]){7}$/.test(id))){
-      return console.error("id no valido")
+  validateIMDB(id) {
+    if (this.validateString("IMDB id", id, 9)) {
+      if (!/^[a-z]{2}[0-9]{7}$/.test(id)) {
+        console.error("IMDB id no es válido");
+        return false;
+      }
     }
   }
 
-  validatedirector(title){
-    if(!(/^[A-Za-z0-9]{100}$/.test(title))){
-      return console.error("nombre del titulo no valido")
+  validatetitle(title) {
+    return this.validateString("Título", title, 100);
+  }
+
+  validatedirector(director) {
+    return this.validateString("Director", director, 50);
+  }
+
+  validateYear(year) {
+    if (!/^\d{4}$/.test(year)) {
+      console.error("El año de estreno no es válido. Debe ser un número entero de 4 dígitos.");
+      return false;
     }
+    return true;
+  }
+
+  validateCountry(country) {
+    if (!Array.isArray(country)) {
+      console.error("El país o países deben ser un arreglo.");
+      return false;
+    }
+    return true;
+  }
+
+  validateGenre(genre) {
+    if (!Array.isArray(genre)) {
+      console.error("Los géneros deben ser un arreglo.");
+      return false;
+    }
+
+    for (let g of genre) {
+      if (!Pelicula.acceptedGenres.includes(g)) {
+        console.error(`Género ${g} no es aceptado.`);
+        return false;
+      }
+    }
+    return true;
+  }
+
+  validateRating(rating) {
+    if (typeof rating !== "number" || rating < 0 || rating > 10 || !/^\d(\.\d)?$/.test(String(rating))) {
+      console.error("La calificación no es válida. Debe ser un número entre 0 y 10 con un decimal.");
+      return false;
+    }
+    return true;
+  }
+
+  // Static method to return accepted genres
+  static getAcceptedGenres() {
+    return this.acceptedGenres;
+  }
+
+  // Method to return full movie information
+  getMovieInfo() {
+    return `Ficha Técnica:\nTítulo: ${this.title}\nDirector: ${this.director}\nAño de estreno: ${this.year}\nPaís: ${this.country.join(', ')}\nGéneros: ${this.genre.join(', ')}\nCalificación: ${this.rating}/10\nIMDB ID: ${this.id}`;
   }
 }
+
+
 
 
 let str = 'xyz1, xyz2, xyz3, xyz4, xyz5, xyz6'
@@ -254,4 +328,14 @@ Ej23(arr.slice())
 Ej24(arr.slice())
 Ej26(arr.slice())
 
-batman = new Pelicula({id:"ttt1234567" , title : "sddd111"})
+// Example usage
+let movies = [
+  { id: "aa1234567", title: "Star Wars", director: "George Lucas", year: 1977, country: ["USA"], genre: ["Sci-Fi", "Adventure"], rating: 8.6 },
+  { id: "bb2345678", title: "The Matrix", director: "Lana Wachowski", year: 1999, country: ["USA"], genre: ["Action", "Sci-Fi"], rating: 8.7 },
+  { id: "cc3456789", title: "Inception", director: "Christopher Nolan", year: 2010, country: ["USA"], genre: ["Action", "Sci-Fi", "Thriller"], rating: 8.8 }
+];
+
+movies.forEach(movieData => {
+  let movie = new Pelicula(movieData);
+  console.log(movie.getMovieInfo());
+});
